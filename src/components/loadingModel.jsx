@@ -5,6 +5,7 @@ import { useGLTF } from "@react-three/drei";
 
 export function LoadModel({ modelsrc, modelPosition }) {
 
+    console.log(modelPosition)
     const model = useGLTF(modelsrc)
 
     return (
