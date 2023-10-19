@@ -121,13 +121,7 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
                             </a>
                         </button>}
 
-                    <ar-button
-                        src="https://github.com/leoncvlt/ar-button/raw/master/assets/Astronaut.glb"
-                        ios-src="https://github.com/leoncvlt/ar-button/raw/master/assets/Astronaut.usdz"
-                        link="https://www.nasa.gov/"
-                        title="A 3D model of an astronaut">
-                        See in Augmented Reality
-                    </ar-button>
+
 
                 </div>}
 
