@@ -21,7 +21,7 @@ export default function Home() {
           height: '100vh',
           backgroundRepeat: 'no-repeat'
         }}>
-          <ModelViewer className='gx-5 px-5' modelImg={"/12-twt-tln12lwt-removebg-preview-removebg-preview.png"} modelSrc={"/Washing Machine White00.glb"} cameraPosition={[0, 1, 3]} modelPos={[0, -0.5, 0]}></ModelViewer>
+          <ModelViewer className='gx-5 px-5' modelImg={"/12-twt-tln12lwt-removebg-preview-removebg-preview.png"} modelSrc={"/WashingMachineBlackHuss.glb"} cameraPosition={[0, 1, 3]} modelPos={[0, -0.5, 0]}></ModelViewer>
         </div>
 
 
