@@ -1,12 +1,16 @@
 
 import React, { useEffect } from "react";
 import { useGLTF, useAnimations, useTexture } from "@react-three/drei";
+import platform from "platform";
 
 // var model;
 
 export function LoadModel({ modelsrc, modelPosition, animating }) {
 
+
     const model = useGLTF(modelsrc)
+
+
 
 
     const animations = useAnimations(model.animations, model.scene)
