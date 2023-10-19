@@ -3,7 +3,8 @@ import React, { Suspense } from "react";
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Loader, useGLTF, useAnimations } from '@react-three/drei'
 import { Html } from "@react-three/drei";
-import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.css';
+import platform from "platform";
 
 import LoadModel from "./loadingModel";
 
@@ -18,14 +19,18 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
     function changeTex1() {
         setIsTexture('/Washing Machine + Animation Black.glb')
         setIsIntensity(4)
+        setIsAnimating(false)
     }
     function changeTex2() {
         setIsTexture('/Washing Machine Silver.glb')
         setIsIntensity(1)
+        setIsAnimating(false)
+
     }
     function changeTex3() {
         setIsTexture('/Washing Machine White00.glb')
         setIsIntensity(1)
+        setIsAnimating(false)
     }
 
 
@@ -37,6 +42,8 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
     function anime() {
         setIsAnimating(true)
     }
+
+    console.log(platform)
 
     return (
         <>
@@ -95,8 +102,9 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
                         Play animation
                     </button>
                     <button className="btn btn-outline-dark mx-1">
-                        View in AR
+                        View in AR for
                     </button>
+                    <h1>{platform.os.family}</h1>
                 </div>}
 
             </div>
