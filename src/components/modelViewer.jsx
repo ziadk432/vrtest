@@ -74,7 +74,7 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
                             <ambientLight intensity={isIntensity} />
                             <color args={['#f5f9f9']} attach="background" />
                             <Suspense fallback={<Html><Loader /></Html>}>
-                                {/* <LoadModel modelsrc={isTexture} modelPosition={modelPos} animating={isAnimating} texture={isTexture} /> */}
+                                <LoadModel modelsrc={isTexture} modelPosition={modelPos} animating={isAnimating} texture={isTexture} />
                             </Suspense>
                         </Canvas>
                     </>
