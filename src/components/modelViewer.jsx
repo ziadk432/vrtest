@@ -5,6 +5,8 @@ import { OrbitControls, Loader, useGLTF, useAnimations } from '@react-three/drei
 import { Html } from "@react-three/drei";
 import 'bootstrap/dist/css/bootstrap.css';
 import platform from "platform";
+import Script from "next/script";
+import Link from "next/link";
 
 import LoadModel from "./loadingModel";
 
@@ -89,6 +91,15 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
                 }}>
                     {<button className={` btn btn-primary `} onClick={loadModel} style={{ marginTop: '28rem' }}>Click to View</button>}
 
+                    <Link rel="stylesheet" href="https://unpkg.com/@leoncvlt/ar-button/styles.css" />
+                    <ar-button
+                        src="https://firrnas-models.s3.eu-west-3.amazonaws.com/elAraby/Washing+Machine+Black+Huss.glb"
+                        ios-src="https://firrnas-models.s3.eu-west-3.amazonaws.com/elAraby/2+scenes+1+washing+machine+.reality"
+                        link="https://www.nasa.gov/"
+                        title="A 3D model of an astronaut">
+                        See in Augmented Reality
+                    </ar-button>
+                    <Script type="module" src="https://unpkg.com/@leoncvlt/ar-button"></Script>
 
 
 
@@ -106,7 +117,6 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
                     <button onClick={anime} className="btn btn-primary mx-1">
                         Play animation
                     </button>
-
                     {platform.os.family == "iOS" && <button className="btn btn-outline-dark mx-1">
                         <a rel="ar" href="2 scenes 1 washing machine .reality" style={{ textDecoration: 'none' }}>
                             View in AR for iOS
@@ -118,9 +128,6 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
                                 View in AR for Android
                             </a>
                         </button>}
-
-
-
                 </div>}
 
             </div >
