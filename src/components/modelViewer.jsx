@@ -1,20 +1,32 @@
 "use client"
 import React, { Suspense } from "react";
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Loader } from '@react-three/drei'
+import { OrbitControls, Loader, useGLTF, useAnimations } from '@react-three/drei'
 import { Html } from "@react-three/drei";
 import 'bootstrap/dist/css/bootstrap.css'
-
-
 
 import LoadModel from "./loadingModel";
 
 export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
     const [isVisibleImg, setIsVisibleImg,] = React.useState(true);
     const [isVisibleModel, setIsVisibleModel] = React.useState(false);
-    // const [Texture1, setTexture1] = useState('')
-    // const [Texture2, setTexture2] = useState('')
+    const [isAnimating, setIsAnimating] = React.useState(false);
+    const [isTexture, setIsTexture] = React.useState(modelSrc);
+    const [isIntensity, setIsIntensity] = React.useState(1);
 
+
+    function changeTex1() {
+        setIsTexture('/Washing Machine + Animation Black.glb')
+        setIsIntensity(4)
+    }
+    function changeTex2() {
+        setIsTexture('/Washing Machine Silver.glb')
+        setIsIntensity(1)
+    }
+    function changeTex3() {
+        setIsTexture('/Washing Machine White00.glb')
+        setIsIntensity(1)
+    }
 
 
     function loadModel() {
@@ -22,29 +34,9 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
         setIsVisibleModel(true)
     }
 
-
-
-    // function Terrain() {
-    //     const colorTexture = useTexture(Texture)
-    //     return (
-    //         // <Plane>
-    //         <mesh>
-    //             <boxGeometry />
-    //             <meshStandardMaterial map={colorTexture} />
-    //         </mesh>
-
-    //         // {/* </Plane> */ }
-    //     )
-    // }
-
-    // function ChangeTexure1() {
-    //     setTexture1('')
-    //     SourceTextModule1()
-    // }
-    // function ChangeTexure1() {
-    //     setTexture2('')
-    //     SourceTextModule2()
-    // }
+    function anime() {
+        setIsAnimating(true)
+    }
 
     return (
         <>
@@ -56,7 +48,6 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center'
                     // backgroundSize: 'cover',
-
                 }}>
 
                 {isVisibleModel &&
@@ -73,10 +64,10 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
                             <OrbitControls makeDefault />
 
                             <directionalLight intensity={1.5} />
-                            <ambientLight intensity={4} />
+                            <ambientLight intensity={isIntensity} />
                             <color args={['#f5f9f9']} attach="background" />
                             <Suspense fallback={<Html><Loader /></Html>}>
-                                <LoadModel modelsrc={modelSrc} modelPosition={modelPos} />
+                                <LoadModel modelsrc={isTexture} modelPosition={modelPos} animating={isAnimating} texture={isTexture} />
                             </Suspense>
                         </Canvas>
                     </>
@@ -91,17 +82,20 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
                     {<button className={` btn btn-primary `} onClick={loadModel} style={{ marginTop: '28rem' }}>Click to View</button>}
                 </div>}
                 {isVisibleModel && <div className="d-flex justify-content-center">
-                    <button className="btn btn-primary mx-1">
-                        Change texture 1
+                    <button onClick={changeTex1} className="btn btn-primary mx-1">
+                        Black
                     </button>
-                    <button className="btn btn-primary mx-1">
-                        Change texture 1
+                    <button onClick={changeTex2} className="btn btn-primary mx-1">
+                        Silver
                     </button>
-                    <button className="btn btn-primary mx-1">
+                    <button onClick={changeTex3} className="btn btn-primary mx-1">
+                        White
+                    </button>
+                    <button onClick={anime} className="btn btn-primary mx-1">
                         Play animation
                     </button>
-                    <button className="btn btn-primary mx-1">
-                        View in VR
+                    <button className="btn btn-outline-dark mx-1">
+                        View in AR
                     </button>
                 </div>}
 
