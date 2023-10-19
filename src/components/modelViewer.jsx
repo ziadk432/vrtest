@@ -108,13 +108,13 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
                     </button>
 
                     {platform.os.family == "iOS" && <button className="btn btn-outline-dark mx-1">
-                        <a className="" theme="dark" data-ar="true" rel="ar" href="/washing machine final animations final buttons.reality" style={{ textDecoration: 'none' }}>
+                        <a className="" data-ar="true" rel="ar" href="https://firrnas-models.s3.eu-west-3.amazonaws.com/ios/chair_swan.usdz" style={{ textDecoration: 'none' }}>
                             View in AR for iOS
                         </a>
                     </button>}
                     {platform.os.family == "Android" &&
                         <button className="btn btn-outline-dark mx-1">
-                            <a className="" theme="dark" data-ar="true" rel="ar" href='https//arvr.google.com/scene-viewer/1.0?file=https://firrnas-models.s3.eu-west-3.amazonaws.com/gltf/chair_swan.gltf#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;' style={{ textDecoration: 'none' }}>
+                            <a className="" theme="dark" data-ar="true" rel="ar" href='intent://arvr.google.com/scene-viewer/1.0?file=https://firrnas-models.s3.eu-west-3.amazonaws.com/gltf/chair_swan.gltf#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;' style={{ textDecoration: 'none' }}>
                                 View in AR for Android
                             </a>
                         </button>}
