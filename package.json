@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@leoncvlt/ar-button": "^0.3.0",
     "@react-three/drei": "^9.88.3",
     "@react-three/fiber": "^8.14.6",
     "@types/three": "^0.157.0",

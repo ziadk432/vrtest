@@ -5,8 +5,6 @@ import { OrbitControls, Loader, useGLTF, useAnimations } from '@react-three/drei
 import { Html } from "@react-three/drei";
 import 'bootstrap/dist/css/bootstrap.css';
 import platform from "platform";
-import "@leoncvlt/ar-button"
-import "@leoncvlt/ar-button/styles.css"
 
 import LoadModel from "./loadingModel";
 
