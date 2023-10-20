@@ -94,27 +94,27 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
                     <Link rel="stylesheet" href="https://unpkg.com/@leoncvlt/ar-button/styles.css" />
                     <ar-button
                         src="/Washing Machine + Animation Black.glb"
-                        ios-src="https://firrnas-models.s3.eu-west-3.amazonaws.com/elAraby/black+washing+.reality"
+                        ios-src="black washing .reality"
                         title="Black washing machine">
                         Black IOS & Android AR
                     </ar-button>
 
                     <ar-button
-                        src="/Washing Machine + Animation Black.glb"
-                        ios-src="https://firrnas-models.s3.eu-west-3.amazonaws.com/elAraby/2+scenes+1+washing+machine+.reality"
+                        src="/Washing Machine White00.glb"
+                        ios-src="/washing machine final animations final buttons (1) (1).reality"
                         title="Silver washing machine">
                         Silver IOS & Android AR
                     </ar-button>
 
                     <ar-button
                         src=""
-                        ios-src="https://firrnas-models.s3.eu-west-3.amazonaws.com/elAraby/2+scenes+1+washing+machine+final+2.reality"
+                        ios-src="/2 scenes 1 washing machine final 2.reality"
                         title="Compare Silver & black washing machine">
                         Compare Silver & Black IOS AR
                     </ar-button>
 
                     <ar-button
-                        src="Washing Machine White00.glb"
+                        src="/Washing Machine White00.glb"
                         ios-src=""
                         title="Compare Silver & black washing machine">
                         White Android AR
