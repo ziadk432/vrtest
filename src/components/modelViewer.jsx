@@ -37,8 +37,11 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
 
 
     function loadModel() {
-        setIsVisibleImg(false)
-        setIsVisibleModel(true)
+        if (platform.os.family != "iOS") {
+            setIsVisibleImg(false)
+            setIsVisibleModel(true)
+        }
+
     }
 
     function anime() {
@@ -91,7 +94,7 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
                 }}>
                     {<button className={` btn btn-primary `} onClick={loadModel} style={{ marginTop: '28rem' }}>Click to View</button>}
 
-                    <Link rel="stylesheet" href="https://unpkg.com/@leoncvlt/ar-button/styles.css" />
+                    {/* <Link rel="stylesheet" href="https://unpkg.com/@leoncvlt/ar-button/styles.css" />
                     <ar-button
                         src="/Washing Machine + Animation Black.glb"
                         ios-src="black washing .reality"
@@ -120,34 +123,39 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
                         White Android AR
                     </ar-button>
 
-                    <Script type="module" src="https://unpkg.com/@leoncvlt/ar-button"></Script>
+                    <Script type="module" src="https://unpkg.com/@leoncvlt/ar-button"></Script> */}
 
 
 
                 </div>}
                 {isVisibleModel && <div className="container-fluid" >
 
-                    <div class="d-flex flex-column mb-3  justify-content-center">
-                        <button onClick={changeTex1} className="btn btn-primary mx-1 my-1 align-self-center" style={{
-                            width: '150px'
-                        }}>
-                            Black
-                        </button>
-                        <button onClick={changeTex2} className="btn btn-primary mx-1 my-1 align-self-center" style={{
-                            width: '150px'
-                        }}>
-                            Silver
-                        </button>
-                        <button onClick={changeTex3} className="btn btn-primary mx-1 my-1 align-self-center" style={{
-                            width: '150px'
-                        }}>
-                            White
-                        </button>
-                        <button onClick={anime} className="btn btn-primary mx-1 my-1  align-self-center" style={{
-                            width: '150px'
-                        }}>
-                            Play animation
-                        </button>
+                    <div class="d-flex mb-3  justify-content-center">
+                        <div className="d-flex flex-column col-3 mx-5">
+                            <button onClick={changeTex1} className="btn btn-primary mx-1 my-1 align-self-center" style={{
+                                width: '100px'
+                            }}>
+                                Black
+                            </button>
+                            <button onClick={changeTex2} className="btn btn-primary mx-1 my-1 align-self-center" style={{
+                                width: '100px'
+                            }}>
+                                Silver
+                            </button>
+                        </div>
+                        <div className="d-flex flex-column col-3">
+                            <button onClick={changeTex3} className="btn btn-primary mx-1 my-1 align-self-center" style={{
+                                width: '100px'
+                            }}>
+                                White
+                            </button>
+                            <button onClick={anime} className="btn btn-primary mx-1 my-1  align-self-center" style={{
+                                width: '100px'
+                            }}>
+                                Animate
+                            </button>
+                        </div>
+
                     </div>
 
 
