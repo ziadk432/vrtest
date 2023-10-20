@@ -100,7 +100,7 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
                     </ar-button>
 
                     <ar-button
-                        src="/Washing Machine White00.glb"
+                        src="/Washing Machine Silver.glb"
                         ios-src="/washing machine final animations final buttons (1) (1).reality"
                         title="Silver washing machine">
                         Silver IOS & Android AR
