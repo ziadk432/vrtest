@@ -92,38 +92,69 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
                     alignItems: 'center',
 
                 }}>
-                    {<button className={` btn btn-primary `} onClick={loadModel} style={{ marginTop: '28rem' }}>Click to View</button>}
+                    {platform.os.family != "iOS" && platform.os.family != "Android" && <button className={` btn btn-primary `} onClick={loadModel} style={{ marginTop: '28rem' }}>Click to View</button>}
 
-                    {/* <Link rel="stylesheet" href="https://unpkg.com/@leoncvlt/ar-button/styles.css" />
-                    <ar-button
-                        src="/Washing Machine + Animation Black.glb"
-                        ios-src="black washing .reality"
-                        title="Black washing machine">
-                        Black IOS & Android AR
-                    </ar-button>
 
-                    <ar-button
-                        src="/Washing Machine Silver.glb"
-                        ios-src="/washing machine final animations final buttons (1) (1).reality"
-                        title="Silver washing machine">
-                        Silver IOS & Android AR
-                    </ar-button>
 
-                    <ar-button
-                        src=""
-                        ios-src="/2 scenes 1 washing machine final 2.reality"
-                        title="Compare Silver & black washing machine">
-                        Compare Silver & Black IOS AR
-                    </ar-button>
 
-                    <ar-button
-                        src="/Washing Machine White00.glb"
-                        ios-src=""
-                        title="Compare Silver & black washing machine">
-                        White Android AR
-                    </ar-button>
 
-                    <Script type="module" src="https://unpkg.com/@leoncvlt/ar-button"></Script> */}
+
+                    {platform.os.family == "iOS" &&
+                        <div class="d-flex mb-3  justify-content-center" style={{ marginTop: '28rem' }}>
+                            <div className="d-flex flex-column col-3 mx-5">
+                                <button className="btn btn-primary mx-1 my-1 align-self-center" style={{
+                                    width: '100px'
+
+                                }}>
+                                    <a className="text-light" href="https://firrnas-models.s3.eu-west-3.amazonaws.com/elAraby/black+washing+.reality" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                                        Black    </a>
+                                </button>
+                                <button className="btn btn-primary mx-1 my-1 align-self-center" style={{
+                                    width: '100px'
+                                }}>
+                                    <a className="text-light" href="https://firrnas-models.s3.eu-west-3.amazonaws.com/elAraby/washing+machine+final+animations+final+buttons+(1)+(1).reality" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                                        Silver
+                                    </a>
+                                </button>
+                            </div>
+                            <div className="d-flex flex-column col-3">
+                                <button className="btn btn-primary mx-1 my-1 align-self-center" style={{
+                                    width: '100px'
+                                }}>
+                                    <a className="text-light" href="https://firrnas-models.s3.eu-west-3.amazonaws.com/elAraby/2+scenes+1+washing+machine+final+2.reality" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                                        Compare Black & Silver
+                                    </a>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    }
+
+                    {platform.os.family == "Android" &&
+
+                        <div class="d-inline   justify-content-center" style={{ marginTop: '28rem' }}>
+                            <div className="d-flex flex-column col-3 ">
+                                <button className={` btn btn-primary `} onClick={loadModel} style={{
+                                    width: '150px'
+
+                                }}>View in browser</button>
+
+                                <button className="btn btn-primary my-1 " style={{
+                                    width: '150px'
+
+                                }}>
+                                    <a className="text-light" href="intent://arvr.google.com/scene-viewer/1.0?file=https://firrnas-models.s3.eu-west-3.amazonaws.com/elAraby/Washing+Machine+Black+Huss.glb#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                                        View in AR    </a>
+                                </button>
+                            </div>
+
+
+                        </div>
+
+
+                    }
 
 
 
