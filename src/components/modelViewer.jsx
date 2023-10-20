@@ -15,7 +15,7 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
     const [isVisibleModel, setIsVisibleModel] = React.useState(false);
     const [isAnimating, setIsAnimating] = React.useState(false);
     const [isTexture, setIsTexture] = React.useState(modelSrc);
-    const [isIntensity, setIsIntensity] = React.useState(2);
+    const [isIntensity, setIsIntensity] = React.useState(1.5);
 
 
     function changeTex1() {
@@ -31,7 +31,7 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
     }
     function changeTex3() {
         setIsTexture('/Washing Machine White00.glb')
-        setIsIntensity(1)
+        setIsIntensity(1.5)
         setIsAnimating(false)
     }
 
