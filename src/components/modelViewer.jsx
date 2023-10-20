@@ -15,7 +15,7 @@ export function ModelViewer({ modelSrc, modelImg, cameraPosition, modelPos }) {
     const [isVisibleModel, setIsVisibleModel] = React.useState(false);
     const [isAnimating, setIsAnimating] = React.useState(false);
     const [isTexture, setIsTexture] = React.useState(modelSrc);
-    const [isIntensity, setIsIntensity] = React.useState(4);
+    const [isIntensity, setIsIntensity] = React.useState(2);
 
 
     function changeTex1() {
